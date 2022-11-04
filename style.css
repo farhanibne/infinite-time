@@ -1,0 +1,353 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue),90%,95%);
+  --fg: hsl(var(--hue),90%,5%);
+  --trans-dur: 0.3s;
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.recursion {
+  font-size: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50em;
+  height: 50em;
+  transform: translate(-50%, -50%);
+}
+.recursion__clock {
+  animation-timing-function: cubic-bezier(0.29, 0.05, 0.76, 0.39);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5em var(--fg) inset;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+.recursion__clock, .recursion__clock-hands:before, .recursion__clock-hands:after {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.recursion__clock--first {
+  animation-name: clockA;
+  transform: translate(-50%, -50%) scale(10);
+}
+.recursion__clock--second {
+  animation-name: clockB;
+  transform: translate(-50%, -50%) scale(1);
+}
+.recursion__clock--third {
+  animation-name: clockC;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+.recursion__clock--fourth {
+  animation-name: clockD;
+  transform: translate(-50%, -50%) scale(0.02);
+}
+.recursion__clock--fifth {
+  animation-name: clockE;
+  transform: translate(-50%, -50%) scale(0);
+}
+.recursion__clock-hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.recursion__clock-hands:before, .recursion__clock-hands:after {
+  animation-timing-function: linear;
+  background-color: var(--fg);
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 0.5em);
+  width: 1em;
+  transform: rotate(-0.5turn) translateY(2.4em);
+  transform-origin: 50% 0;
+}
+.recursion__clock-hands:before {
+  animation-name: hour;
+  height: 8em;
+}
+.recursion__clock-hands:after {
+  animation-name: minute;
+  height: 16em;
+}
+.recursion__clock-ticks {
+  width: 100%;
+  height: 100%;
+}
+.recursion__clock-tick {
+  background-color: var(--fg);
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 0.5em);
+  width: 1em;
+  height: 1em;
+  transform: translateY(18em);
+  transform-origin: 50% 0;
+}
+.recursion__clock-tick:nth-child(5n+1) {
+  height: 2em;
+}
+.recursion__clock-tick:nth-child(2) {
+  transform: rotate(6deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(3) {
+  transform: rotate(12deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(4) {
+  transform: rotate(18deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(5) {
+  transform: rotate(24deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(6) {
+  transform: rotate(30deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(7) {
+  transform: rotate(36deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(8) {
+  transform: rotate(42deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(9) {
+  transform: rotate(48deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(10) {
+  transform: rotate(54deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(11) {
+  transform: rotate(60deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(12) {
+  transform: rotate(66deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(13) {
+  transform: rotate(72deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(14) {
+  transform: rotate(78deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(15) {
+  transform: rotate(84deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(16) {
+  transform: rotate(90deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(17) {
+  transform: rotate(96deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(18) {
+  transform: rotate(102deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(19) {
+  transform: rotate(108deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(20) {
+  transform: rotate(114deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(21) {
+  transform: rotate(120deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(22) {
+  transform: rotate(126deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(23) {
+  transform: rotate(132deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(24) {
+  transform: rotate(138deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(25) {
+  transform: rotate(144deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(26) {
+  transform: rotate(150deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(27) {
+  transform: rotate(156deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(28) {
+  transform: rotate(162deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(29) {
+  transform: rotate(168deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(30) {
+  transform: rotate(174deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(31) {
+  transform: rotate(180deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(32) {
+  transform: rotate(186deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(33) {
+  transform: rotate(192deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(34) {
+  transform: rotate(198deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(35) {
+  transform: rotate(204deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(36) {
+  transform: rotate(210deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(37) {
+  transform: rotate(216deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(38) {
+  transform: rotate(222deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(39) {
+  transform: rotate(228deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(40) {
+  transform: rotate(234deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(41) {
+  transform: rotate(240deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(42) {
+  transform: rotate(246deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(43) {
+  transform: rotate(252deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(44) {
+  transform: rotate(258deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(45) {
+  transform: rotate(264deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(46) {
+  transform: rotate(270deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(47) {
+  transform: rotate(276deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(48) {
+  transform: rotate(282deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(49) {
+  transform: rotate(288deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(50) {
+  transform: rotate(294deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(51) {
+  transform: rotate(300deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(52) {
+  transform: rotate(306deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(53) {
+  transform: rotate(312deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(54) {
+  transform: rotate(318deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(55) {
+  transform: rotate(324deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(56) {
+  transform: rotate(330deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(57) {
+  transform: rotate(336deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(58) {
+  transform: rotate(342deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(59) {
+  transform: rotate(348deg) translateY(18em);
+}
+.recursion__clock-tick:nth-child(60) {
+  transform: rotate(354deg) translateY(18em);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),90%,5%);
+    --fg: hsl(var(--hue),90%,95%);
+  }
+}
+/* Animations */
+@keyframes clockA {
+  from {
+    transform: translate(-50%, -50%) scale(10);
+    visibility: visible;
+  }
+  50%, to {
+    transform: translate(-50%, -50%) scale(35);
+    visibility: hidden;
+  }
+}
+@keyframes clockB {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(10);
+  }
+}
+@keyframes clockC {
+  from {
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes clockD {
+  from {
+    transform: translate(-50%, -50%) scale(0.01);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+}
+@keyframes clockE {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(0.01);
+  }
+}
+@keyframes hour {
+  from {
+    transform: rotate(-0.5turn) translateY(2.4em);
+  }
+  to {
+    transform: rotate(0.5turn) translateY(2.4em);
+  }
+}
+@keyframes minute {
+  from {
+    transform: rotate(-0.5turn) translateY(2.4em);
+  }
+  to {
+    transform: rotate(3.5turn) translateY(2.4em);
+  }
+}
